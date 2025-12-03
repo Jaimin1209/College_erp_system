@@ -1,0 +1,30 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="mavenproject1" type="com.poratu.idea.plugins.tomcat" singleton="false">
+    <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+    <predefined_log_file enabled="true" id="Tomcat Access Log" />
+    <predefined_log_file id="Tomcat Catalina Log" />
+    <predefined_log_file id="Tomcat Manager Log" />
+    <predefined_log_file id="Tomcat Host Manager Log" />
+    <option name="adminPort" value="8006" />
+    <option name="catalinaBase" value="C:\Users\PRITESH\.SmartTomcat\mavenproject1\mavenproject1" />
+    <option name="contextPath" value="/mavenproject1" />
+    <option name="docBase" value="C:\Advance Java\java_project\mavenproject1\src\main\webapp" />
+    <option name="envOptions">
+      <map />
+    </option>
+    <option name="extraClassPath" value="" />
+    <option name="port" value="8081" />
+    <option name="tomcatInfo">
+      <TomcatInfo>
+        <option name="name" value="Apache Tomcat/8.5.96" />
+        <option name="path" value="$PROJECT_DIR$/../../../xampp/tomcat" />
+        <option name="version" value="8.5.96.0" />
+      </TomcatInfo>
+    </option>
+    <option name="vmOptions" value="" />
+    <module name="mavenproject1" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

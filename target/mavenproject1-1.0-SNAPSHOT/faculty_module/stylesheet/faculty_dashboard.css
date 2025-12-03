@@ -1,0 +1,242 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 29 Nov 2025, 6:15:14 pm
+    Author     : PRITESH
+*/
+
+ /* Base Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex; /* Enable flexbox for sidebar and main content layout */
+        }
+
+        /* Variables for easy color/size change */
+        :root {
+            --sidebar-width: 250px;
+            --faculty-accent: #667eea; /* Purple accent color */
+            --faculty-accent-dark: #764ba2;
+        }
+
+        /* Header Styling */
+        .header {
+            background: linear-gradient(135deg, var(--faculty-accent) 0%, var(--faculty-accent-dark) 100%);
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 28px;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: sticky; /* Keep header visible */
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+        }
+
+        /* Main Layout Container */
+        .dashboard-container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: #2c3e50; /* Dark background for contrast */
+            color: white;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            position: fixed; /* Fixed position */
+            height: 100vh;
+            overflow-y: auto;
+            transition: transform 0.3s ease;
+            z-index: 1050;
+        }
+
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #ecf0f1; /* Light text color */
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-left: 4px solid transparent;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background-color: #34495e; /* Slightly lighter on hover */
+            color: var(--faculty-accent);
+            border-left: 4px solid var(--faculty-accent);
+        }
+
+        .sidebar a i {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex-grow: 1;
+            margin-left: var(--sidebar-width); /* Push content to the right */
+            transition: margin-left 0.3s ease;
+            padding: 0;
+        }
+
+        /* Profile Card & Grid Styling */
+        .profile-card {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid var(--faculty-accent);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid var(--faculty-accent);
+            object-fit: cover;
+            flex-shrink: 0;
+            margin-right: 25px;
+        }
+
+        .profile-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            color: #555;
+            font-size: 16px;
+        }
+
+        .profile-info b {
+            color: #111;
+        }
+
+        .grid {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 15px;
+            display: grid;
+            /* Optimized for 3 columns on wide screen */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--faculty-accent);
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-decoration: none;
+            display: block;
+        }
+
+        .card:hover {
+            background: linear-gradient(135deg, var(--faculty-accent) 0%, var(--faculty-accent-dark) 100%);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+            border-color: var(--faculty-accent);
+        }
+
+        .card i {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: var(--faculty-accent);
+            transition: color 0.3s ease;
+        }
+
+        .card:hover i {
+            color: white;
+        }
+
+        /* Sidebar Toggle Button (for mobile) */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--faculty-accent);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 1100;
+            display: none; /* Hidden by default on desktop */
+        }
+
+        /* Responsive adjustments */
+        @media(max-width: 1024px) {
+            .sidebar {
+                transform: translateX(calc(var(--sidebar-width) * -1)); /* Hide sidebar off-screen */
+            }
+
+            .sidebar.active {
+                transform: translateX(0); /* Show sidebar */
+            }
+
+            .main-content {
+                margin-left: 0; /* No margin on smaller screens */
+            }
+
+            .toggle-btn {
+                display: block; /* Show toggle button on mobile */
+            }
+
+            .header {
+                padding-left: 70px; /* Make space for the toggle button */
+            }
+        }
+
+        @media(max-width: 800px){
+            .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+            .profile-card { flex-direction: column; text-align: center; }
+            .profile-card img { margin-bottom: 20px; margin-right: 0; }
+        }
+
+        @media(max-width: 500px){
+            .grid { grid-template-columns: 1fr; }
+            .profile-card { margin: 20px 10px; padding: 20px; }
+        }
